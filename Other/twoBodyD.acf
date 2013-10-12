@@ -1,0 +1,8 @@
+simulation: dynamics
+tend: 1.0
+stepSize: 0.0005
+outputSteps: 200
+gravity: -9.81 0
+output: position, all
+output: velocity, all
+output: acceleration, all

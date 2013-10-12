@@ -1,0 +1,93 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Body: 1                     % id of this body (this is the crank)
+Mass: 200.0                 % mass of body
+Jbar: 450.0                 % mass moment of inertia
+xZero: 0.0                  % initial X position
+yZero: 0.0                  % initial Y position
+phiZero: 3.14159265             % initial orientation
+xDotZero: 0.0               % initial velX
+yDotZero: 0.0               % initial velY
+phiDotZero: 30.0             % initial velPhi
+geometry: 0 .1 2 -.1        % upper left (x,y), lower right (x,y)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Body: 2                     % id of this body (this is the coupler)
+Mass: 35.0                  % mass of body
+Jbar: 35.0                  % mass moment of inertia
+xZero: -.25               % initial X position
+yZero: 0.0              % initial Y position
+phiZero: 0.0             % initial orientation
+xDotZero: 0                 % initial velX
+yDotZero: -30                 % initial velY
+phiDotZero: 17.1429               % initial velPhi
+geometry: -1.75 .1 1.75 -.1 % upper left (x,y), lower right (x,y)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Body: 3                     % id of this body (this is the coupler)
+Mass: 25.0                  % mass of body
+Jbar: 0.02                  % mass moment of inertia
+xZero: 1.5               % initial X position
+yZero: 0                    % initial Y position
+phiZero: 0                  % initial orientation
+xDotZero: 0                 % initial velX
+yDotZero: 0                 % initial velY
+phiDotZero: 0               % initial velPhi
+geometry: -.5 .5 .5 -.5     % upper left (x,y), lower right (x,y)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+AbsoluteX: 1               % id of this constraint
+Body: 1                    % id of participating body
+xPprime: 0                 % x of point P on moving body, expressed in LRF
+yPprime: 0                 % y of point P on moving body, expressed in LRF
+xPground: 0                % x of point P on ground
+yPground: 0                % y of point P on ground
+CmotionFunction: 0         % provides expression for C(t)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+AbsoluteY: 2               % id of this constraint
+Body: 1                    % id of participating body
+xPprime: 0                 % x of point P on moving body, expressed in LRF
+yPprime: 0                 % y of point P on moving body, expressed in LRF
+xPground: 0                % x of point P on ground
+yPground: 0                % y of point P on ground
+CmotionFunction: 0         % provides expression for C(t)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+RevoluteJoint: 3           % id of this constraint
+BodyI: 1                   % id of body I
+BodyJ: 2                   % id of body J
+xPprimeI: 2                % x of point P on body I
+yPprimeI: 0                % y of point P on body I
+xPprimeJ: -1.75            % x of point P on body J
+yPprimeJ: 0                % y of point P on body J
+CmotionFunction: 0         % provides expression for C(t)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+RevoluteJoint: 4           % id of this constraint
+BodyI: 2                   % id of body I
+BodyJ: 3                   % id of body J
+xPprimeI: 1.75             % x of point P on body I
+yPprimeI: 0                % y of point P on body I
+xPprimeJ: 0                % x of point P on body J
+yPprimeJ: 0                % y of point P on body J
+CmotionFunction: 0         % provides expression for C(t)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+AbsoluteY: 5               % id of this constraint
+Body: 3                    % id of participating body
+xPprime: 0                 % x of point P on moving body, expressed in LRF
+yPprime: 0                 % y of point P on moving body, expressed in LRF
+xPground: 0                % x of point P on ground
+yPground: 0                % y of point P on ground
+CmotionFunction: 0         % provides expression for C(t)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+AbsoluteAngle: 6           % id of this constraint
+Body: 3                    % id of body the constraint refers to
+CmotionFunction: 0         % provides expression for C(t)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Force: 7 % id of this force
+Body: 3 % id of the body the force acts on
+Fx: 10 % x-component of the Force, might depend on time
+Fy: 0 % y-component of the Force, might depend on time
+IsInGlobal: 0 % indicates whether the force F is provided in global RF
+xPprime: 0 % x of point P where F acts, expressed in LRF
+yPprime: 0 % y of point P where F acts, expressed in LR
+CmotionFunctionX: compressor.txt         % provides expression for C(t)
+CmotionFunctionY: 0         % provides expression for C(t)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Torque: 8                  % id of this torque
+Body: 1                    % id of the body the torque acts on
+n: 41450                   % value assume by torque, might depend on time

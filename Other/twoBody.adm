@@ -1,0 +1,60 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Body: 1 % id of this body
+Mass: 1 % mass of body
+Jbar: 1 % mass moment of inertia
+xZero: 0 % initial X position
+yZero: 0 % initial Y position
+phiZero: 0 % initial orientation (this is pi/2)
+xDotZero: 0.0 % initial velX
+yDotZero: 0.0 % initial velY
+phiDotZero: 0.0 % initial velPhi
+geometry: 0 .125 1 -.125 % upper left (x,y), lower right (x,y)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Body: 2 % id of this body
+Mass: 1 % mass of body
+Jbar: 1 % mass moment of inertia
+xZero: 3 % initial X position
+yZero: 0 % initial Y position
+phiZero: 1.57079632679489661923 % initial orientation (this is pi/2)
+xDotZero: 0.0 % initial velX
+yDotZero: 0.0 % initial velY
+phiDotZero: 0.0 % initial velPhi
+geometry: -.125 2 .125 0 % upper left (x,y), lower right (x,y)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+AbsoluteX: 1 % id of this constraint
+Body: 1 % id of participating body
+xPprime: 0 % x of point P on moving body, expressed in LRF
+yPprime: 0 % y of point P on moving body, expressed in LRF
+xPground: 0 % x of point P on ground
+yPground: 0 % y of point P on ground
+CmotionFunction: 0 % provides expression for C(t)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+AbsoluteY: 2 % id of this constraint
+Body: 1 % id of participating body
+xPprime: 0 % x of point P on moving body, expressed in LRF
+yPprime: 0 % y of point P on moving body, expressed in LRF
+xPground: 0 % x of point P on ground
+yPground: 0 % y of point P on ground
+CmotionFunction: 0 % provides expression for C(t)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+AbsoluteY: 4 % id of this constraint
+Body: 2 % id of participating body
+xPprime: 0 % x of point P on moving body, expressed in LRF
+yPprime: 0 % y of point P on moving body, expressed in LRF
+xPground: 0 % x of point P on ground
+yPground: 0 % y of point P on ground
+CmotionFunction: 0 % provides expression for C(t)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+RevoluteJoint: 3 % id of this constraint
+BodyI: 1 % id of body I
+BodyJ: 2 % id of body J
+xPprimeI: 1 % x of point P on body I
+yPprimeI: 0 % y of point P on body I
+xPprimeJ: 0 % x of point P on body J
+yPprimeJ: 2 % y of point P on body J
+CmotionFunction: 0 % provides expression for C(t)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+AbsoluteAngle: 5 % id of this constraint
+Body: 1 % id of body the constraint refers to
+CmotionFunction: 6*t % provides expression for C(t)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
